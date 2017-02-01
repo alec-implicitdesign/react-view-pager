@@ -8,7 +8,6 @@
 # APP
 node_modules
 npm-debug.log
-/lib/
 /example/bundle.js
 
 # General Files
