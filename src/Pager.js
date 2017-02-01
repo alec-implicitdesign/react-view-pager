@@ -324,7 +324,9 @@ class Pager {
       const nextPosition = lastPosition + viewSize
       let position = lastPosition
 
-      if (nextPosition + (viewSize * align) < Math.abs(wrappedtrackPosition)) {
+      // impd: setting the align attribute directly (to -0.5) caused the initial order of the Views to be offset.
+      // it was necessary to set the align variable to -0.5 here so that the Views would transition smoothly over the edges
+      if (nextPosition + (viewSize * -0.5) < Math.abs(wrappedtrackPosition)) {
         // shift views around so they are always visible in frame
         if (infinite) {
           position += trackSize - lastPosition
